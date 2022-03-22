@@ -19,6 +19,7 @@ def distance (antenna, power, frequency,freq_unit):
         lmbda = 299.8 / frequency
     except:
         return "error"
+    
     fraun = antenna * antenna * 2 / lmbda
     g_distance = fraun
     if frequency < 0.01 or frequency>=300000:
@@ -38,7 +39,8 @@ def distance (antenna, power, frequency,freq_unit):
     if frequency >=15000 and frequency < 300000:
         R = 100 * math.sqrt(30*power) / (math.sqrt(5*math.pi*frequency))
     
-
+    if R > g_distance:
+        g_distance = R
     result = str(round(g_distance,2))
     print("The health distance is ",round(g_distance,2), "m")
     return result
