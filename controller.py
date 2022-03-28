@@ -3,6 +3,7 @@ from ui import Ui_MainWindow
 from PySide2 import QtWidgets,QtGui
 from health_distance import distance
 from PyQt5.QtWidgets import QMessageBox
+import random
 class HealthWindow(QtWidgets.QMainWindow,Ui_MainWindow):
     def __init__(self):
         super(HealthWindow,self).__init__()
@@ -20,9 +21,10 @@ class HealthWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.frequency_lineedit.setValidator(number_validator)
 
         self.calculate_button.clicked.connect(self.calculate_health_distance)
-
-
-
+        #        self.lat1_deg_lineedit.setText(str(round(random.uniform(0,90))))
+        self.antenna_lineedit.setText(str(round(random.uniform(0,500))))
+        self.power_lineedit.setText(str(round(random.uniform(0,500))))
+        self.frequency_lineedit.setText(str(round(random.uniform(0,500))))
     def calculate_health_distance(self):
         flip = 0
         warning_list = []
