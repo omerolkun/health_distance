@@ -23,7 +23,7 @@ def distance (antenna, power, frequency,freq_unit):
     fraun = antenna * antenna * 2 / lmbda
     g_distance = fraun
     if frequency < 0.01 or frequency>=94000:
-        print("range of frequency is not desirable")
+        #print("range of frequency is not desirable")
         return "error"
     if frequency >= 0.01 and frequency < 0.15:
         R = math.sqrt(30 * power) / ( 19.3)
@@ -41,15 +41,15 @@ def distance (antenna, power, frequency,freq_unit):
     if frequency >= 2000 and frequency < 94000:
         R = math.sqrt(30 * power) / 12.3
     
-    print("R is ",R)
-    print("GMesafe is ", g_distance)
+    #print("R is ",R)
+    #print("GMesafe is ", g_distance)
 
     if R > g_distance:
         g_distance = R
     result = str(round(g_distance,2))
-    print("The health distance is ",round(g_distance,2), "m")
+    #print("The health distance is ",round(g_distance,2), "m")
     return result
-
+ 
 if __name__ == "__main__":
     distance(230,485,464,'kHz')    
 
