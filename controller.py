@@ -1,7 +1,7 @@
 import sys
 from ui import Ui_MainWindow
 from PySide2 import QtWidgets,QtGui
-from health_distance import distance
+from health_distance_updated import distance
 from PyQt5.QtWidgets import QMessageBox
 import random
 class HealthWindow(QtWidgets.QMainWindow,Ui_MainWindow):
@@ -51,7 +51,7 @@ class HealthWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         result = distance(antenna_long, power, frequency,frequency_unit)
         if result == "error":
             flip = flip + 1 
-            warning_list.append("Frequency must be in the range of 10kHz to 30GHz")
+            warning_list.append("Frequency must be in the range of 10kHz to 94GHz")
         if flip > 0:
             msg = QMessageBox()
             msg.setWindowTitle("Warning")

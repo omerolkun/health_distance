@@ -19,8 +19,8 @@
      <rect>
       <x>70</x>
       <y>50</y>
-      <width>561</width>
-      <height>271</height>
+      <width>591</width>
+      <height>261</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -71,7 +71,7 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>50</x>
        <y>160</y>
        <width>67</width>
        <height>17</height>
