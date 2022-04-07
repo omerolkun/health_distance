@@ -11,6 +11,7 @@ class HealthWindow(QtWidgets.QMainWindow,Ui_MainWindow):
 
         #set the combobox values
         self.freq_unit_combobox.addItems(['Hz','kHz','MHz','GHz'])
+        self.freq_unit_combobox.setCurrentIndex(2)
 
         #validator for inputs
         number_validator = QtGui.QDoubleValidator(0,99999,2)
@@ -48,6 +49,7 @@ class HealthWindow(QtWidgets.QMainWindow,Ui_MainWindow):
 
         if self.frequency_lineedit.text():
             frequency = float(frequency)
+            
         result = distance(antenna_long, power, frequency,frequency_unit)
         if result == "error":
             flip = flip + 1 
@@ -64,6 +66,7 @@ class HealthWindow(QtWidgets.QMainWindow,Ui_MainWindow):
             return
         else:
             self.guvenli_mesafe_value_label.setText(str(result) + " m")
+            print("result = ",result, " m ")
 
 app = QtWidgets.QApplication(sys.argv)
 window = HealthWindow()
