@@ -1,5 +1,5 @@
 import math
-
+#this is old version, the formula is from 2006, not the BTK document in 2018
 def distance (antenna, power, frequency,freq_unit):
     if antenna == "":
         antenna = 0
