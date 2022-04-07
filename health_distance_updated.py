@@ -18,7 +18,7 @@ def distance (antenna, power, frequency,freq_unit):
     try:
         lmbda = 299.8 / frequency
     except:
-        return "errfdgfdgor"
+        return "error"
     
     fraun = antenna * antenna * 2 / lmbda
     g_distance = fraun
